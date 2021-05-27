@@ -21,6 +21,14 @@ namespace PropertyRental
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddCors(options =>
+                options.AddPolicy(name: "MyAllowSpecificOrigins",
+                    builder =>
+                    {
+                      //builder.AllowAnyOrigin(); // Any movement from external APIs is allowed
+                      builder.WithOrigins("https://localhost:44330"); // Only specyfic app address is allowed
+                    }
+            ));
 
       services.AddControllers();
       services.AddSwaggerGen(c =>
@@ -51,6 +59,8 @@ namespace PropertyRental
       app.UseHttpsRedirection();
 
       app.UseRouting();
+
+      app.UseCors(); // Cors should appear between app.UseRouting(); and app.UseAuthorization();
 
       app.UseAuthorization();
 
