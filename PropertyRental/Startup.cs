@@ -34,6 +34,8 @@ namespace PropertyRental
         var filePath = Path.Combine(AppContext.BaseDirectory, "PropertyRental.xml");
         c.IncludeXmlComments(filePath);
       });
+
+      services.AddHealthChecks();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +47,7 @@ namespace PropertyRental
         app.UseSwagger();
         app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PropertyRental v1"));
       }
-
+      app.UseHealthChecks("/hc");
       app.UseHttpsRedirection();
 
       app.UseRouting();
