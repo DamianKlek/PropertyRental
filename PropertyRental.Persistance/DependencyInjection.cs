@@ -2,7 +2,7 @@
 
 namespace PropertyRental.Persistance
 {
-  public class Class1
+  public class DependencyInjection
   {
   }
 }
