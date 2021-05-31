@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PropertyRental.Domain.Common;
+using PropertyRental.Domain.ValueObjects;
 
 namespace PropertyRental.Domain.Entities
 {
-  class Tenant
+  public class Tenant : AuditableEntity
   {
+    public TenantName TenantName { get; set; }
+    public Email Email { get; set; }
   }
 }

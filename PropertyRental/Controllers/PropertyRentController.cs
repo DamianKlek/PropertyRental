@@ -2,8 +2,8 @@
 
 namespace PropertyRental.Controllers
 {
-  [Route("api/rents")]
-  public class RentController : Controller
+  [Route("api/rented-properties")]
+  public class PropertyRentController : Controller
   {
     public IActionResult Index()
     {
