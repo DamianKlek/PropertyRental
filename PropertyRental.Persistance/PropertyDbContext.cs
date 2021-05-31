@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace PropertyRental.Persistance
 {
-  class PropertyDbContext
+  public class PropertyDbContext : DbContext
   {
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options)
+    {
+
+    }
   }
 }
