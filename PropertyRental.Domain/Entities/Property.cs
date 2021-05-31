@@ -1,12 +1,15 @@
-﻿using System;
+﻿using PropertyRental.Domain.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PropertyRental.Domain.Entities
 {
-  class Property
+  public class Property : AuditableEntity
   {
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public PropertyRent PropertyRent { get; set; }
+    public PropertyAddress PropertyAddress { get; set; }
+    public ICollection<Image> Images { get; set; }
+    public ICollection<Tag> Tags { get; set; }
   }
 }

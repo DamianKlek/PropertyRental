@@ -1,12 +1,11 @@
-﻿using System;
+﻿using PropertyRental.Domain.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PropertyRental.Domain.Entities
 {
-  class Tag
+  public class Tag : AuditableEntity
   {
+    public string Name { get; set; }
+    public ICollection<Property> Properties { get; set; }
   }
 }

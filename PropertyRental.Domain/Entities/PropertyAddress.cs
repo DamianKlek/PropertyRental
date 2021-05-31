@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PropertyRental.Domain.Common;
+using PropertyRental.Domain.ValueObjects;
 
 namespace PropertyRental.Domain.Entities
 {
-  class PropertyAddress
+  public class PropertyAddress : AuditableEntity
   {
+    public int PropertyId { get; set; }
+    public Property Property { get; set; }
+    public AddressDetail AddressDetail { get; set; }
   }
 }
