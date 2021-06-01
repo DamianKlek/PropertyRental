@@ -5,8 +5,8 @@ namespace PropertyRental.Domain.Entities
 {
   public class PropertyAddress : AuditableEntity
   {
+    public AddressDetail AddressDetail { get; set; }
     public int PropertyId { get; set; }
     public Property Property { get; set; }
-    public AddressDetail AddressDetail { get; set; }
   }
 }
