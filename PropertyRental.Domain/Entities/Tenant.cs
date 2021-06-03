@@ -5,7 +5,7 @@ namespace PropertyRental.Domain.Entities
 {
   public class Tenant : AuditableEntity
   {
-    public TenantName TenantName { get; set; }
+    public PersonName TenantName { get; set; }
     public Email Email { get; set; }
   }
 }

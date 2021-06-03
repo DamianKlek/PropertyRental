@@ -9,7 +9,7 @@ namespace PropertyRental.Domain.ValueObjects
     public int BuildingNumber { get; set; }
     public int? FlatNumber { get; set; }
     public string CityName { get; set; }
-    public ZipCode ZipCode { get; set; }
+    public string ZipCode { get; set; }
     public string CountryName { get; set; }
 
     public override string ToString()
@@ -33,6 +33,7 @@ namespace PropertyRental.Domain.ValueObjects
       yield return BuildingNumber;
       yield return FlatNumber;
       yield return CityName;
+      yield return ZipCode;
       yield return CountryName;
     }
   }
