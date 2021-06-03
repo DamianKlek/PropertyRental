@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PropertyRental.Domain.ValueObjects
 {
-  public class TenantName : ValueObject
+  public class PersonName : ValueObject
   {
     public string FirstName { get; set; }
     public string LastName { get; set; }

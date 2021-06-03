@@ -35,7 +35,8 @@ namespace PropertyRental.Domain.ValueObjects
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-      throw new NotImplementedException();
+      yield return UserName;
+      yield return DomainName;
     }
   }
 }
