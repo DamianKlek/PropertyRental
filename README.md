@@ -27,3 +27,6 @@ Project is created with:
 * .NET Core Web API
 * Entity Framework
 * Microsoft SQL Server
+
+## Database schema
+![Database schema](DbSchema.png)
