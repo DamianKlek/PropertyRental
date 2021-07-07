@@ -26,7 +26,9 @@ namespace PropertyRental.Persistance
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-
+			modelBuilder.Entity<PropertyAddress>().OwnsOne(p => p.AddressDetail);
+			modelBuilder.Entity<Tenant>().OwnsOne(p => p.Name);
+			modelBuilder.Entity<Tenant>().OwnsOne(p => p.Email);
 		}
 
 		public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
