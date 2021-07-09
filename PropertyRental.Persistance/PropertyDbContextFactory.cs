@@ -3,7 +3,7 @@ using MovieManagement.Persistance;
 
 namespace PropertyRental.Persistance
 {
-	public class MovieDbContextFactory : DesignTimeDbContextFactoryBase<PropertyDbContext>
+	public class PropertyDbContextFactory : DesignTimeDbContextFactoryBase<PropertyDbContext>
 	{
 		protected override PropertyDbContext CreateNewInstance(DbContextOptions<PropertyDbContext> options)
 		{
