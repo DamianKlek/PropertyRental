@@ -30,8 +30,11 @@ namespace PropertyRental.Persistance
 				});
 
 				t.OwnsOne(t => t.Name).HasData(new { TenantId = 1, FirstName = "Mike", LastName = "Parker", UserName = "Mikey", DomainName = "gmail.com" });
+				t.OwnsOne(t => t.Email).HasData(new { TenantId = 1, UserName = "Mikey", DomainName = "gmail.com" });
 				t.OwnsOne(t => t.Name).HasData(new { TenantId = 2, FirstName = "Ann", LastName = "Brown", UserName = "AnnBrown", DomainName = "gmail.com" });
+				t.OwnsOne(t => t.Email).HasData(new { TenantId = 2, UserName = "AnnBrown", DomainName = "gmail.com" });
 				t.OwnsOne(t => t.Name).HasData(new { TenantId = 3, FirstName = "Oliver", LastName = "Garcia", UserName = "OliverTestMail", DomainName = "outlook.com" });
+				t.OwnsOne(t => t.Email).HasData(new { TenantId = 3, UserName = "OliverTestMail", DomainName = "outlook.com" });
 			});
 
 			modelBuilder.Entity<Property>(p =>

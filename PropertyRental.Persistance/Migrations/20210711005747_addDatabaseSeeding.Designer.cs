@@ -10,8 +10,8 @@ using PropertyRental.Persistance;
 namespace PropertyRental.Persistance.Migrations
 {
     [DbContext(typeof(PropertyDbContext))]
-    [Migration("20210709210639_seedData")]
-    partial class seedData
+    [Migration("20210711005747_addDatabaseSeeding")]
+    partial class addDatabaseSeeding
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,7 +69,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 1,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(3524),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(6552),
                             Day = new DateTime(2021, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 1,
                             StatusId = 1
@@ -78,7 +78,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 2,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4261),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7276),
                             Day = new DateTime(2021, 9, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 1,
                             StatusId = 1
@@ -87,7 +87,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 3,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4273),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7287),
                             Day = new DateTime(2021, 9, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 1,
                             StatusId = 1
@@ -96,7 +96,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 4,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4276),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7290),
                             Day = new DateTime(2021, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 1,
                             StatusId = 1
@@ -105,7 +105,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 5,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4278),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7292),
                             Day = new DateTime(2021, 8, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             StatusId = 1
@@ -114,7 +114,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 6,
                             AvailabilityStatus = 0,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4280),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7294),
                             Day = new DateTime(2021, 8, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             StatusId = 1
@@ -123,7 +123,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 7,
                             AvailabilityStatus = 0,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4283),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7297),
                             Day = new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             StatusId = 1
@@ -132,7 +132,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 8,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4285),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7299),
                             Day = new DateTime(2021, 8, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             StatusId = 1
@@ -141,7 +141,7 @@ namespace PropertyRental.Persistance.Migrations
                         {
                             Id = 9,
                             AvailabilityStatus = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(4287),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(7302),
                             Day = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             StatusId = 1
@@ -203,7 +203,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(6197),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(9117),
                             EndRentDate = new DateTime(2021, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PropertyRentId = 2,
                             RentCost = 98m,
@@ -260,7 +260,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(4649),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(7243),
                             Name = "CozyMansionPrimary",
                             PropertyId = 1,
                             SourcePath = "TBA",
@@ -269,7 +269,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(5402),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(7942),
                             Name = "CozyMansionOutside",
                             PropertyId = 1,
                             SourcePath = "TBA",
@@ -278,7 +278,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(5413),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(7952),
                             Name = "CozyMansionInside",
                             PropertyId = 1,
                             SourcePath = "TBA",
@@ -287,7 +287,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(5416),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(7955),
                             Name = "StudentFlatPrimary",
                             PropertyId = 2,
                             SourcePath = "TBA",
@@ -296,7 +296,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 5,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(5418),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(7957),
                             Name = "StudentFlatLivingroom",
                             PropertyId = 2,
                             SourcePath = "TBA",
@@ -346,7 +346,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 55, DateTimeKind.Local).AddTicks(4563),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 776, DateTimeKind.Local).AddTicks(7386),
                             Description = "Cozy masion situated outside the town",
                             Name = "Cozy masion",
                             StatusId = 1
@@ -354,7 +354,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 55, DateTimeKind.Local).AddTicks(5076),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 776, DateTimeKind.Local).AddTicks(7912),
                             Description = "Flat placed in city centre",
                             Name = "Student flat",
                             StatusId = 1
@@ -403,14 +403,14 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 55, DateTimeKind.Local).AddTicks(8604),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(1521),
                             PropertyId = 1,
                             StatusId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 55, DateTimeKind.Local).AddTicks(8884),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 777, DateTimeKind.Local).AddTicks(1800),
                             PropertyId = 2,
                             StatusId = 1
                         });
@@ -461,7 +461,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 56, DateTimeKind.Local).AddTicks(9579),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(2098),
                             DayCost = 100m,
                             PropertyId = 1,
                             StatusId = 1
@@ -469,7 +469,7 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(111),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(2620),
                             DayCost = 49m,
                             PropertyId = 2,
                             StatusId = 1
@@ -515,28 +515,28 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(2025),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(4543),
                             Name = "Mansion",
                             StatusId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(2297),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(4815),
                             Name = "Flat",
                             StatusId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(2307),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(4823),
                             Name = "House",
                             StatusId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 57, DateTimeKind.Local).AddTicks(2309),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 778, DateTimeKind.Local).AddTicks(4825),
                             Name = "High standard",
                             StatusId = 1
                         });
@@ -578,19 +578,19 @@ namespace PropertyRental.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 52, DateTimeKind.Local).AddTicks(6425),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 773, DateTimeKind.Local).AddTicks(7693),
                             StatusId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 54, DateTimeKind.Local).AddTicks(2755),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 775, DateTimeKind.Local).AddTicks(4147),
                             StatusId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Created = new DateTime(2021, 7, 9, 23, 6, 39, 54, DateTimeKind.Local).AddTicks(2811),
+                            Created = new DateTime(2021, 7, 11, 2, 57, 46, 775, DateTimeKind.Local).AddTicks(4174),
                             StatusId = 1
                         });
                 });
@@ -749,6 +749,26 @@ namespace PropertyRental.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("TenantId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    TenantId = 1,
+                                    DomainName = "gmail.com",
+                                    UserName = "Mikey"
+                                },
+                                new
+                                {
+                                    TenantId = 2,
+                                    DomainName = "gmail.com",
+                                    UserName = "AnnBrown"
+                                },
+                                new
+                                {
+                                    TenantId = 3,
+                                    DomainName = "outlook.com",
+                                    UserName = "OliverTestMail"
+                                });
                         });
 
                     b.OwnsOne("PropertyRental.Domain.ValueObjects.PersonName", "Name", b1 =>

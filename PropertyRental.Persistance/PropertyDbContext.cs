@@ -2,6 +2,7 @@
 using PropertyRental.Domain.Common;
 using PropertyRental.Domain.Entities;
 using System;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,9 +27,7 @@ namespace PropertyRental.Persistance
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<PropertyAddress>().OwnsOne(p => p.AddressDetail);
-			modelBuilder.Entity<Tenant>().OwnsOne(p => p.Name);
-			modelBuilder.Entity<Tenant>().OwnsOne(p => p.Email);
+			modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
 			modelBuilder.SeedData();
 		}
