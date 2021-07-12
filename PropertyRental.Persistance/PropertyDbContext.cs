@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PropertyRental.Application.Common.Interfaces;
 using PropertyRental.Domain.Common;
 using PropertyRental.Domain.Entities;
-using System;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,9 +10,10 @@ namespace PropertyRental.Persistance
 {
 	public class PropertyDbContext : DbContext
 	{
-		public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options)
+		private readonly IDateTime _dateTime;
+		public PropertyDbContext(DbContextOptions<PropertyDbContext> options, IDateTime dateTime) : base(options)
 		{
-
+			_dateTime = dateTime;
 		}
 
 		public DbSet<Availability> Availabilities { get; set; }
@@ -40,19 +41,19 @@ namespace PropertyRental.Persistance
 				{
 					case EntityState.Added:
 						entry.Entity.CreatedBy = string.Empty;
-						entry.Entity.Created = DateTime.Now;
+						entry.Entity.Created = _dateTime.Now;
 						entry.Entity.StatusId = 1;
 						break;
 					case EntityState.Modified:
 						entry.Entity.ModifiedBy = string.Empty;
-						entry.Entity.Modified = DateTime.Now;
+						entry.Entity.Modified = _dateTime.Now;
 						entry.Entity.StatusId += 1;
 						break;
 					case EntityState.Deleted:
 						entry.Entity.ModifiedBy = string.Empty;
-						entry.Entity.Modified = DateTime.Now;
+						entry.Entity.Modified = _dateTime.Now;
 						entry.Entity.InactivatedBy = string.Empty;
-						entry.Entity.Inactivated = DateTime.Now;
+						entry.Entity.Inactivated = _dateTime.Now;
 						entry.Entity.StatusId = 0;
 						entry.State = EntityState.Modified;
 						break;
