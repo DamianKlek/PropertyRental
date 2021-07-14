@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PropertyRental.Domain.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace PropertyRental.Persistance
 {
@@ -278,6 +279,23 @@ namespace PropertyRental.Persistance
 					PropertyId = 2
 				});
 			});
+
+			modelBuilder.Entity<Property>()
+				.HasMany(p => p.Tags)
+				.WithMany(t => t.Properties)
+				.UsingEntity<Dictionary<string, object>>(
+				"PropertyTags",
+				r => r.HasOne<Tag>().WithMany().HasForeignKey("TagId"),
+				l => l.HasOne<Property>().WithMany().HasForeignKey("PropertyId"),
+				je =>
+				{
+					je.HasKey("PropertyId", "TagId");
+					je.HasData(
+						new { PropertyId = 1, TagId = 1 },
+						new { PropertyId = 1, TagId = 3 },
+						new { PropertyId = 1, TagId = 4 },
+						new { PropertyId = 2, TagId = 2 });
+				});
 		}
 	}
 }

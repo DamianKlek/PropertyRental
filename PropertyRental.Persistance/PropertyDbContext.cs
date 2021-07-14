@@ -11,6 +11,9 @@ namespace PropertyRental.Persistance
 	public class PropertyDbContext : DbContext
 	{
 		private readonly IDateTime _dateTime;
+		public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options)
+		{
+		}
 		public PropertyDbContext(DbContextOptions<PropertyDbContext> options, IDateTime dateTime) : base(options)
 		{
 			_dateTime = dateTime;
