@@ -1,4 +1,5 @@
 ﻿using PropertyRental.Application.Common.Interfaces;
+using PropertyRental.Domain.Exceptions;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -63,9 +64,9 @@ namespace PropertyRental.Infrastructure.ExternalAPIs.NBPExchangeRate
 					}
 				}
 			}
-			catch (Exception ex)
+			catch (NBPClientException ex)
 			{
-				throw;
+				throw new NBPClientException(ex);
 			}
 		}
 	}
