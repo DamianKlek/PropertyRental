@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PropertyRental.Application.Common.Interfaces;
 
 namespace PropertyRental.Persistance
 {
@@ -10,6 +11,7 @@ namespace PropertyRental.Persistance
 		{
 			services.AddDbContext<PropertyDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("PropertyDatabase")));
 
+			services.AddScoped<IPropertyDbConext, PropertyDbContext>();
 			return services;
 		}
 
