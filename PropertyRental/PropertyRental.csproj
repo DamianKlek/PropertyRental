@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PropertyRental.Infrastructure\PropertyRental.Infrastructure.csproj" />
     <ProjectReference Include="..\PropertyRental.Persistance\PropertyRental.Persistance.csproj" />
   </ItemGroup>
 
