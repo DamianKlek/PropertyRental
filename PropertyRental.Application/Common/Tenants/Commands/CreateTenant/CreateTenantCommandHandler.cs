@@ -9,10 +9,10 @@ namespace PropertyRental.Application.Common.Tenants.Commands.CreateTenant
 {
 	public class CreateTenantCommandHandler : IRequestHandler<CreateTenantCommand, int>
 	{
-		private readonly IPropertyDbConext _conext;
+		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
 
-		public CreateTenantCommandHandler(IPropertyDbConext propertyDbConext, IMapper mapper)
+		public CreateTenantCommandHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
 		{
 			_conext = propertyDbConext;
 			_mapper = mapper;

@@ -11,7 +11,7 @@ namespace PropertyRental.Persistance
 		{
 			services.AddDbContext<PropertyDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("PropertyDatabase")));
 
-			services.AddScoped<IPropertyDbConext, PropertyDbContext>();
+			services.AddScoped<IPropertyDbContext, PropertyDbContext>();
 			return services;
 		}
 

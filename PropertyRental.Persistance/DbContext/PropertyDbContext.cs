@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Persistance
 {
-	public class PropertyDbContext : DbContext, IPropertyDbConext
+	public class PropertyDbContext : DbContext, IPropertyDbContext
 	{
 		private readonly IDateTime _dateTime;
 		public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options)

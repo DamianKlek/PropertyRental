@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Interfaces
 {
-	public interface IPropertyDbConext
+	public interface IPropertyDbContext
 	{
 		DbSet<Availability> Availabilities { get; set; }
 		DbSet<Contract> Contracts { get; set; }

@@ -9,9 +9,9 @@ namespace PropertyRental.Application.Common.Tenants.Commands.DeleteTenant
 {
 	class DeleteTenantCommandHandler : IRequestHandler<DeleteTenantCommand>
 	{
-		private readonly IPropertyDbConext _context;
+		private readonly IPropertyDbContext _context;
 
-		public DeleteTenantCommandHandler(IPropertyDbConext propertyDbContext)
+		public DeleteTenantCommandHandler(IPropertyDbContext propertyDbContext)
 		{
 			_context = propertyDbContext;
 		}
