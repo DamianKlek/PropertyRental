@@ -27,7 +27,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<int>> AddTenantAsync(CreateTenantCommand tenant)
+		public async Task<ActionResult<int>> CreateTenantAsync(CreateTenantCommand tenant)
 		{
 			var id = await Mediator.Send(tenant);
 			return id;

@@ -59,7 +59,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task UpdateTenantAsync(UpdateTagCommand tag)
+		public async Task UpdateTagAsync(UpdateTagCommand tag)
 		{
 			await Mediator.Send(tag);
 		}
