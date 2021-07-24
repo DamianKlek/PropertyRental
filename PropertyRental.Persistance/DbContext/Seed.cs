@@ -58,16 +58,16 @@ namespace PropertyRental.Persistance
 				});
 			});
 
-			modelBuilder.Entity<PropertyAddress>(pa =>
+			modelBuilder.Entity<Address>(a =>
 			{
-				pa.HasData(new PropertyAddress()
+				a.HasData(new Address()
 				{
 					Id = 1,
 					StatusId = 1,
 					Created = DateTime.Now,
 					PropertyId = 1
 				},
-				new PropertyAddress()
+				new Address()
 				{
 					Id = 2,
 					StatusId = 1,
@@ -75,8 +75,8 @@ namespace PropertyRental.Persistance
 					PropertyId = 2
 				});
 
-				pa.OwnsOne(pa => pa.AddressDetail).HasData(new { PropertyAddressId = 1, StreetName = "Willow Grove Hwy", BuildingNumber = 34, CityName = "Tennessee", ZipCode = "38541", CountryName = "United States" });
-				pa.OwnsOne(pa => pa.AddressDetail).HasData(new { PropertyAddressId = 2, StreetName = "Linwood avenue", BuildingNumber = 147, CityName = "California", ZipCode = "90017", CountryName = "United States" });
+				a.OwnsOne(a => a.AddressDetail).HasData(new { AddressId = 1, StreetName = "Willow Grove Hwy", BuildingNumber = 34, CityName = "Tennessee", ZipCode = "38541", CountryName = "United States" });
+				a.OwnsOne(a => a.AddressDetail).HasData(new { AddressId = 2, StreetName = "Linwood avenue", BuildingNumber = 147, CityName = "California", ZipCode = "90017", CountryName = "United States" });
 			});
 
 			modelBuilder.Entity<Availability>(a =>

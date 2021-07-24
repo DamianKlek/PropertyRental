@@ -3,7 +3,7 @@ using PropertyRental.Domain.ValueObjects;
 
 namespace PropertyRental.Domain.Entities
 {
-  public class PropertyAddress : AuditableEntity
+  public class Address : AuditableEntity
   {
     public AddressDetail AddressDetail { get; set; }
     public int PropertyId { get; set; }

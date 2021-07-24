@@ -4,9 +4,9 @@ using PropertyRental.Domain.Entities;
 
 namespace PropertyRental.Persistance.Configurations
 {
-	class PropertyAddressConfiguration : IEntityTypeConfiguration<PropertyAddress>
+	class PropertyAddressConfiguration : IEntityTypeConfiguration<Address>
 	{
-		public void Configure(EntityTypeBuilder<PropertyAddress> builder)
+		public void Configure(EntityTypeBuilder<Address> builder)
 		{
 			builder.OwnsOne(p => p.AddressDetail).Property(p => p.StreetName).HasColumnName("StreetName").HasMaxLength(70).IsRequired();
 			builder.OwnsOne(p => p.AddressDetail).Property(p => p.BuildingNumber).HasColumnName("BuildingNumber").IsRequired();

@@ -11,7 +11,7 @@ namespace PropertyRental.Application.Common.Interfaces
 		DbSet<Contract> Contracts { get; set; }
 		DbSet<Image> Images { get; set; }
 		DbSet<Property> Properties { get; set; }
-		DbSet<PropertyAddress> PropertyAddresses { get; set; }
+		DbSet<Address> Addresses { get; set; }
 		DbSet<PropertyRent> PropertyRents { get; set; }
 		DbSet<Tag> Tags { get; set; }
 		DbSet<Tenant> Tenants { get; set; }
