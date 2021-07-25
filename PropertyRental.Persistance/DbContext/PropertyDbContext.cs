@@ -24,7 +24,7 @@ namespace PropertyRental.Persistance
 		public DbSet<Image> Images { get; set; }
 		public DbSet<Property> Properties { get; set; }
 		public DbSet<Address> Addresses { get; set; }
-		public DbSet<PropertyRent> PropertyRents { get; set; }
+		public DbSet<Offer> Offers { get; set; }
 		public DbSet<Tag> Tags { get; set; }
 		public DbSet<Tenant> Tenants { get; set; }
 

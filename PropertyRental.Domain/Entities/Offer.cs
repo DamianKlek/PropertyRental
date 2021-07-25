@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PropertyRental.Domain.Entities
 {
-  public class PropertyRent : AuditableEntity
+  public class Offer : AuditableEntity
   {
     public decimal DayCost { get; set; }
     public int PropertyId { get; set; }

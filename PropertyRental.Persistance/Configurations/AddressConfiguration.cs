@@ -4,7 +4,7 @@ using PropertyRental.Domain.Entities;
 
 namespace PropertyRental.Persistance.Configurations
 {
-	class PropertyAddressConfiguration : IEntityTypeConfiguration<Address>
+	class AddressConfiguration : IEntityTypeConfiguration<Address>
 	{
 		public void Configure(EntityTypeBuilder<Address> builder)
 		{

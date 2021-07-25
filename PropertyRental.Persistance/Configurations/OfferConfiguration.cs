@@ -4,9 +4,9 @@ using PropertyRental.Domain.Entities;
 
 namespace PropertyRental.Persistance.Configurations
 {
-	class PropertyRentConfiguration : IEntityTypeConfiguration<PropertyRent>
+	class OfferConfiguration : IEntityTypeConfiguration<Offer>
 	{
-		public void Configure(EntityTypeBuilder<PropertyRent> builder)
+		public void Configure(EntityTypeBuilder<Offer> builder)
 		{
 			builder.Property(p => p.DayCost).IsRequired();
 		}

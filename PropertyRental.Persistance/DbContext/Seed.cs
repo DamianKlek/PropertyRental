@@ -88,7 +88,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 09, 01),
 					AvailabilityStatus = 1,
-					PropertyRentId = 1
+					OfferId = 1
 				},
 				new Availability()
 				{
@@ -97,7 +97,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 09, 02),
 					AvailabilityStatus = 1,
-					PropertyRentId = 1
+					OfferId = 1
 				},
 				new Availability()
 				{
@@ -106,7 +106,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 09, 03),
 					AvailabilityStatus = 1,
-					PropertyRentId = 1
+					OfferId = 1
 				},
 				new Availability()
 				{
@@ -115,7 +115,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 09, 04),
 					AvailabilityStatus = 1,
-					PropertyRentId = 1
+					OfferId = 1
 				},
 				new Availability()
 				{
@@ -124,7 +124,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 08, 13),
 					AvailabilityStatus = 1,
-					PropertyRentId = 2
+					OfferId = 2
 				},
 				new Availability()
 				{
@@ -133,7 +133,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 08, 14),
 					AvailabilityStatus = 0,
-					PropertyRentId = 2
+					OfferId = 2
 				},
 				new Availability()
 				{
@@ -142,7 +142,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 08, 15),
 					AvailabilityStatus = 0,
-					PropertyRentId = 2
+					OfferId = 2
 				},
 				new Availability()
 				{
@@ -151,7 +151,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 08, 16),
 					AvailabilityStatus = 1,
-					PropertyRentId = 2
+					OfferId = 2
 				},
 				new Availability()
 				{
@@ -160,7 +160,7 @@ namespace PropertyRental.Persistance
 					Created = DateTime.Now,
 					Day = new DateTime(2021, 08, 17),
 					AvailabilityStatus = 1,
-					PropertyRentId = 2
+					OfferId = 2
 				});
 			});
 
@@ -174,14 +174,14 @@ namespace PropertyRental.Persistance
 					StartRentDate = new DateTime(2021, 08, 14),
 					EndRentDate = new DateTime(2021, 08, 15),
 					RentCost = 98,
-					PropertyRentId = 2,
+					OfferId = 2,
 					TenantId = 3
 				});
 			});
 
-			modelBuilder.Entity<PropertyRent>(pr =>
+			modelBuilder.Entity<Offer>(pr =>
 			{
-				pr.HasData(new PropertyRent()
+				pr.HasData(new Offer()
 				{
 					Id = 1,
 					StatusId = 1,
@@ -189,7 +189,7 @@ namespace PropertyRental.Persistance
 					DayCost = 100,
 					PropertyId = 1
 				},
-				new PropertyRent()
+				new Offer()
 				{
 					Id = 2,
 					StatusId = 1,

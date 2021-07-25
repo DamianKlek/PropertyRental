@@ -3,11 +3,11 @@ using System;
 
 namespace PropertyRental.Domain.Entities
 {
-  public class Availability : AuditableEntity
-  {
-    public DateTime Day { get; set; }
-    public int AvailabilityStatus { get; set; }
-    public int PropertyRentId { get; set; }
-    public PropertyRent PropertyRent { get; set; }
-  }
+	public class Availability : AuditableEntity
+	{
+		public DateTime Day { get; set; }
+		public int AvailabilityStatus { get; set; }
+		public int OfferId { get; set; }
+		public Offer Offer { get; set; }
+	}
 }

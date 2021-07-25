@@ -12,7 +12,7 @@ namespace PropertyRental.Application.Common.Interfaces
 		DbSet<Image> Images { get; set; }
 		DbSet<Property> Properties { get; set; }
 		DbSet<Address> Addresses { get; set; }
-		DbSet<PropertyRent> PropertyRents { get; set; }
+		DbSet<Offer> Offers { get; set; }
 		DbSet<Tag> Tags { get; set; }
 		DbSet<Tenant> Tenants { get; set; }
 
