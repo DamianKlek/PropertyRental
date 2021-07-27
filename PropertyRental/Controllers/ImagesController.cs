@@ -32,7 +32,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
 		public async Task<ActionResult<ListImageVm>> GetImagesAsync(int propertyId)
 		{
-			var vm = await Mediator.Send(new GetImagesQuery());
+			var vm = await Mediator.Send(new GetImagesQuery() { PropertyId = propertyId });
 			return vm;
 		}
 

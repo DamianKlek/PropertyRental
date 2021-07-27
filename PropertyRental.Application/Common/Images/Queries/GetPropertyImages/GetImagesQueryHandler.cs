@@ -21,16 +21,12 @@ namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
 		}
 		public async Task<ListImageVm> Handle(GetImagesQuery request, CancellationToken cancellationToken)
 		{
-			var images = _conext.Images
-				.Include(i => i.Property)
+			var images = await _conext.Images
 				.Where(i => i.PropertyId == request.PropertyId && i.StatusId > 0)
-				.AsQueryable();
+				.AsNoTracking().ProjectTo<ImageDto>(_mapper.ConfigurationProvider)
+				.ToListAsync(cancellationToken);
 
-			var imagesDto = await images.ProjectTo<ImageDto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
-
-			var listImages = new ListImageVm() { Images = imagesDto };
-
-			return listImages;
+			return new ListImageVm() { Images = images };
 		}
 	}
 }
