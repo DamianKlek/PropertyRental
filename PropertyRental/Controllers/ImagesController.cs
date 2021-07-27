@@ -24,7 +24,6 @@ namespace PropertyRental.Controllers
 			return vm;
 		}
 
-		//TODO: Fix to return proper data
 		[HttpGet("properties/{propertyId}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
