@@ -5,23 +5,23 @@ using PropertyRental.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PropertyRental.Application.Common.Images.Commands.UpdateImage
+namespace PropertyRental.Application.Common.Offers.Commands.UpdateOffer
 {
-	public class UpdateImageCommandHandler : IRequestHandler<UpdateImageCommand>
+	public class UpdateOfferCommandHandler : IRequestHandler<UpdateOfferCommand>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public UpdateImageCommandHandler(IPropertyDbContext context, IMapper mapper)
+		public UpdateOfferCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
 			_context = context;
 			_mapper = mapper;
 		}
-		public async Task<Unit> Handle(UpdateImageCommand request, CancellationToken cancellationToken)
+		public async Task<Unit> Handle(UpdateOfferCommand request, CancellationToken cancellationToken)
 		{
-			var image = _mapper.Map<Image>(request);
+			var offer = _mapper.Map<Offer>(request);
 
-			_context.Images.Update(image);
+			_context.Offers.Update(offer);
 
 			await _context.SaveChangesAsync(cancellationToken);
 

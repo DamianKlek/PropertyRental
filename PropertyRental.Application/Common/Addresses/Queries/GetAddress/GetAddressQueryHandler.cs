@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Addresses.Queries.GetAddress
 {
-	public class GetAddressQueryHandler : IRequestHandler<GetAddressQuery, AddressVm>
+	public class GetAddressQueryHandler : IRequestHandler<GetAddressQuery, StandardAddressVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -19,11 +19,11 @@ namespace PropertyRental.Application.Common.Addresses.Queries.GetAddress
 			_mapper = mapper;
 		}
 
-		public async Task<AddressVm> Handle(GetAddressQuery request, CancellationToken cancellationToken)
+		public async Task<StandardAddressVm> Handle(GetAddressQuery request, CancellationToken cancellationToken)
 		{
 			var address = await _context.Addresses.Where(a => a.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
 
-			var addressVm = _mapper.Map<AddressVm>(address);
+			var addressVm = _mapper.Map<StandardAddressVm>(address);
 
 			return addressVm;
 		}

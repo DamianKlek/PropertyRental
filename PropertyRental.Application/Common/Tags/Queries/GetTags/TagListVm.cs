@@ -2,7 +2,7 @@
 
 namespace PropertyRental.Application.Common.Tags.Queries.GetTags
 {
-	public class ListTagVm
+	public class TagListVm
 	{
 		public ICollection<TagDto> Tags { get; set; }
 	}

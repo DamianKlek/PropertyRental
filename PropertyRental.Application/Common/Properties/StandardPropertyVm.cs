@@ -1,21 +1,23 @@
 ﻿using AutoMapper;
+using PropertyRental.Application.Common.Images;
 using PropertyRental.Application.Common.Mappings;
+using PropertyRental.Application.Common.Tags;
 using PropertyRental.Domain.Entities;
 using System.Collections.Generic;
 
-namespace PropertyRental.Application.Common.Properties.Queries.GetProperty
+namespace PropertyRental.Application.Common.Properties
 {
-	public class PropertyVm : IMapFrom<Property>
+	public class StandardPropertyVm : IMapFrom<Property>
 	{
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string Address { get; set; }
-		public ICollection<ImagesVm> Images { get; set; }
-		public ICollection<TagsVm> Tags { get; set; }
+		public ICollection<StandardImageVm> Images { get; set; }
+		public ICollection<StandardTagVm> Tags { get; set; }
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Property, PropertyVm>()
+			profile.CreateMap<Property, StandardPropertyVm>()
 				.ForMember(p => p.Name, map => map.MapFrom(src => src.Name))
 				.ForMember(p => p.Description, map => map.MapFrom(src => src.Description))
 				.ForMember(p => p.Address, map => map.MapFrom<AddressResolver>())

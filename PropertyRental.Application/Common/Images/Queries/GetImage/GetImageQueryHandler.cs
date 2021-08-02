@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Images.Queries.GetImage
 {
-	public class GetImageQueryHandler : IRequestHandler<GetImageQuery, ImageVm>
+	public class GetImageQueryHandler : IRequestHandler<GetImageQuery, StandardImageVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -17,11 +17,11 @@ namespace PropertyRental.Application.Common.Images.Queries.GetImage
 			_context = context;
 			_mapper = mapper;
 		}
-		public async Task<ImageVm> Handle(GetImageQuery request, CancellationToken cancellationToken)
+		public async Task<StandardImageVm> Handle(GetImageQuery request, CancellationToken cancellationToken)
 		{
 			var image = await _context.Images.Where(i => i.Id == request.ImageId).FirstOrDefaultAsync(cancellationToken);
 
-			var imageVm = _mapper.Map<ImageVm>(image);
+			var imageVm = _mapper.Map<StandardImageVm>(image);
 
 			return imageVm;
 		}

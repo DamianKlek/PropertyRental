@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Tenants.Queries.GetTenant
 {
-	public class GetTenantQueryHandler : IRequestHandler<GetTenantQuery, TenantVm>
+	public class GetTenantQueryHandler : IRequestHandler<GetTenantQuery, StandardTenantVm>
 	{
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace PropertyRental.Application.Common.Tenants.Queries.GetTenant
 			_mapper = mapper;
 		}
 
-		public async Task<TenantVm> Handle(GetTenantQuery request, CancellationToken cancellationToken)
+		public async Task<StandardTenantVm> Handle(GetTenantQuery request, CancellationToken cancellationToken)
 		{
 			var tenant = await _conext.Tenants.Where(p => p.Id == request.TenantId).FirstOrDefaultAsync(cancellationToken);
 
-			var tenantVm = _mapper.Map<TenantVm>(tenant);
+			var tenantVm = _mapper.Map<StandardTenantVm>(tenant);
 
 			return tenantVm;
 		}

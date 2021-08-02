@@ -2,7 +2,7 @@
 
 namespace PropertyRental.Application.Common.Images.Queries.GetImage
 {
-	public class GetImageQuery : IRequest<ImageVm>
+	public class GetImageQuery : IRequest<StandardImageVm>
 	{
 		public int ImageId { get; set; }
 	}

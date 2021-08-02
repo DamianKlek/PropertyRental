@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Properties.Queries.GetProperty
 {
-	public class GetPropertyQueryHandler : IRequestHandler<GetPropertyQuery, PropertyVm>
+	public class GetPropertyQueryHandler : IRequestHandler<GetPropertyQuery, StandardPropertyVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace PropertyRental.Application.Common.Properties.Queries.GetProperty
 			_mapper = mapper;
 		}
 
-		public async Task<PropertyVm> Handle(GetPropertyQuery request, CancellationToken cancellationToken)
+		public async Task<StandardPropertyVm> Handle(GetPropertyQuery request, CancellationToken cancellationToken)
 		{
 			var property = await _context.Properties.Where(p => p.Id == request.PropertyId)
 				.Include(p => p.PropertyAddress)
@@ -27,7 +27,7 @@ namespace PropertyRental.Application.Common.Properties.Queries.GetProperty
 				.Include(p => p.Images).Where(i => i.StatusId > 0)
 				.FirstOrDefaultAsync(cancellationToken);
 
-			var propertyVm = _mapper.Map<PropertyVm>(property);
+			var propertyVm = _mapper.Map<StandardPropertyVm>(property);
 
 			return propertyVm;
 		}

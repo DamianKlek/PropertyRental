@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Tenants;
 using PropertyRental.Application.Common.Tenants.Commands.CreateTenant;
 using PropertyRental.Application.Common.Tenants.Commands.DeleteTenant;
 using PropertyRental.Application.Common.Tenants.Commands.UpdateTenant;
@@ -17,7 +18,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<TenantVm>> GetTenantAsync(int id)
+		public async Task<ActionResult<StandardTenantVm>> GetTenantAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetTenantQuery() { TenantId = id });
 			return vm;

@@ -2,15 +2,16 @@
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 
-namespace PropertyRental.Application.Common.Properties.Queries.GetProperty
+namespace PropertyRental.Application.Common.Images
 {
-	public class TagsVm : IMapFrom<Tag>
+	public class StandardImageVm : IMapFrom<Image>
 	{
 		public string Name { get; set; }
+		public string SourcePath { get; set; }
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Tag, TagsVm>();
+			profile.CreateMap<Image, StandardImageVm>();
 		}
 	}
 }

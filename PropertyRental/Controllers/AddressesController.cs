@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Addresses;
 using PropertyRental.Application.Common.Addresses.Commands.CreateAddress;
 using PropertyRental.Application.Common.Addresses.Commands.DeleteAddress;
 using PropertyRental.Application.Common.Addresses.Commands.UpdateAddress;
@@ -18,7 +19,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<AddressVm>> GetAddressAsync(int id)
+		public async Task<ActionResult<StandardAddressVm>> GetAddressAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetAddressQuery() { Id = id });
 			return vm;

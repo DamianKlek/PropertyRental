@@ -2,7 +2,7 @@
 
 namespace PropertyRental.Application.Common.Tags.Queries.GetTags
 {
-	public class GetTagsQuery : IRequest<ListTagVm>
+	public class GetTagsQuery : IRequest<TagListVm>
 	{
 	}
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Availabilities.Queries.GetAvailability
 {
-	public class GetAvailabilityQueryHandler : IRequestHandler<GetAvailabilityQuery, AvailabilityVm>
+	public class GetAvailabilityQueryHandler : IRequestHandler<GetAvailabilityQuery, StandardAvailabilityVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace PropertyRental.Application.Common.Availabilities.Queries.GetAvailabili
 			_context = context;
 			_mapper = mapper;
 		}
-		public async Task<AvailabilityVm> Handle(GetAvailabilityQuery request, CancellationToken cancellationToken)
+		public async Task<StandardAvailabilityVm> Handle(GetAvailabilityQuery request, CancellationToken cancellationToken)
 		{
 			var availability = await _context.Availabilities.Where(a => a.Id == request.AvailabilityId).FirstOrDefaultAsync(cancellationToken);
 
-			var availabilityVm = _mapper.Map<AvailabilityVm>(availability);
+			var availabilityVm = _mapper.Map<StandardAvailabilityVm>(availability);
 
 			return availabilityVm;
 		}

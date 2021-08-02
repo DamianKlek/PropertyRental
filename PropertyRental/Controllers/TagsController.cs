@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Tags;
 using PropertyRental.Application.Common.Tags.Commands.CreateTag;
 using PropertyRental.Application.Common.Tags.Commands.DeleteTag;
 using PropertyRental.Application.Common.Tags.Commands.UpdateTag;
@@ -18,7 +19,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<TagVm>> GetTagAsync(int id)
+		public async Task<ActionResult<StandardTagVm>> GetTagAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetTagQuery() { TagId = id });
 			return vm;
@@ -29,7 +30,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<ListTagVm>> GetTagsAsync()
+		public async Task<ActionResult<TagListVm>> GetTagsAsync()
 		{
 			var vm = await Mediator.Send(new GetTagsQuery());
 			return vm;

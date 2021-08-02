@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Properties;
 using PropertyRental.Application.Common.Properties.Commands.CreateProperty;
 using PropertyRental.Application.Common.Properties.Commands.DeleteProperty;
 using PropertyRental.Application.Common.Properties.Commands.UpdateProperty;
@@ -17,7 +18,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<PropertyVm>> GetPropertyAsync(int id)
+		public async Task<ActionResult<StandardPropertyVm>> GetPropertyAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetPropertyQuery() { PropertyId = id });
 			return vm;

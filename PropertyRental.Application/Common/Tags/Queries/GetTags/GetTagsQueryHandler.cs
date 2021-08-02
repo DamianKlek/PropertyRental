@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Tags.Queries.GetTags
 {
-	public class GetTagsQueryHandler : IRequestHandler<GetTagsQuery, ListTagVm>
+	public class GetTagsQueryHandler : IRequestHandler<GetTagsQuery, TagListVm>
 	{
-		private readonly IPropertyDbContext _conext;
+		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
 		public GetTagsQueryHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
 		{
-			_conext = propertyDbConext;
+			_context = propertyDbConext;
 			_mapper = mapper;
 		}
 
-		public async Task<ListTagVm> Handle(GetTagsQuery request, CancellationToken cancellationToken)
+		public async Task<TagListVm> Handle(GetTagsQuery request, CancellationToken cancellationToken)
 		{
-			var tags = _conext.Tags.Where(t => t.StatusId > 0).AsQueryable();
+			var tags = _context.Tags.Where(t => t.StatusId > 0).AsQueryable();
 
 			var tagsDto = await tags.ProjectTo<TagDto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
 
-			var listTags = new ListTagVm() { Tags = tagsDto };
+			var listTags = new TagListVm() { Tags = tagsDto };
 
 			return listTags;
 		}

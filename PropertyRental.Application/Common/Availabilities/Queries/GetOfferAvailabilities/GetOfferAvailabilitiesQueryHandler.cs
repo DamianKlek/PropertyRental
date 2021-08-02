@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities
 {
-	public class GetOfferAvailabilitiesQueryHandler : IRequestHandler<GetOfferAvailabilitiesQuery, ListAvailabilityVm>
+	public class GetOfferAvailabilitiesQueryHandler : IRequestHandler<GetOfferAvailabilitiesQuery, AvailabilityListVm>
 	{
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvail
 			_conext = propertyDbConext;
 			_mapper = mapper;
 		}
-		public async Task<ListAvailabilityVm> Handle(GetOfferAvailabilitiesQuery request, CancellationToken cancellationToken)
+		public async Task<AvailabilityListVm> Handle(GetOfferAvailabilitiesQuery request, CancellationToken cancellationToken)
 		{
 			var availabilities = _conext.Availabilities
 				.Include(a => a.Offer)
@@ -30,7 +30,7 @@ namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvail
 				.ProjectTo<AvailabilityDto>(_mapper.ConfigurationProvider)
 				.ToListAsync(cancellationToken);
 
-			var listAvailabilities = new ListAvailabilityVm() { Availabilities = availabilitiesDto };
+			var listAvailabilities = new AvailabilityListVm() { Availabilities = availabilitiesDto };
 
 			return listAvailabilities;
 		}

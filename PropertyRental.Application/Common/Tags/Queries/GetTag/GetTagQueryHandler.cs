@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Tags.Queries.GetTag
 {
-	public class GetTagQueryHandler : IRequestHandler<GetTagQuery, TagVm>
+	public class GetTagQueryHandler : IRequestHandler<GetTagQuery, StandardTagVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -19,11 +19,11 @@ namespace PropertyRental.Application.Common.Tags.Queries.GetTag
 			_context = propertyDbContext;
 		}
 
-		public async Task<TagVm> Handle(GetTagQuery request, CancellationToken cancellationToken)
+		public async Task<StandardTagVm> Handle(GetTagQuery request, CancellationToken cancellationToken)
 		{
 			var tag = await _context.Tags.Where(p => p.Id == request.TagId).FirstOrDefaultAsync(cancellationToken);
 
-			var tagVm = _mapper.Map<TagVm>(tag);
+			var tagVm = _mapper.Map<StandardTagVm>(tag);
 
 			return tagVm;
 		}

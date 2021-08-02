@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Contracts;
 using PropertyRental.Application.Common.Contracts.Commands.CreateContract;
 using PropertyRental.Application.Common.Contracts.Commands.DeleteContract;
 using PropertyRental.Application.Common.Contracts.Commands.UpdateContract;
@@ -17,7 +18,7 @@ namespace PropertyRental.Controllers
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<ContractVm>> GetContractAsync(int id)
+		public async Task<ActionResult<StandardContractVm>> GetContractAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetContractQuery() { ContractId = id });
 			return vm;

@@ -2,9 +2,9 @@
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 
-namespace PropertyRental.Application.Common.Addresses.Queries.GetAddress
+namespace PropertyRental.Application.Common.Addresses
 {
-	public class AddressVm : IMapFrom<Address>
+	public class StandardAddressVm : IMapFrom<Address>
 	{
 		public int Id { get; set; }
 		public string StreetName { get; set; }
@@ -17,7 +17,7 @@ namespace PropertyRental.Application.Common.Addresses.Queries.GetAddress
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Address, AddressVm>()
+			profile.CreateMap<Address, StandardAddressVm>()
 				.ForPath(a => a.StreetName, map => map.MapFrom(src => src.AddressDetail.StreetName))
 				.ForPath(a => a.BuildingNumber, map => map.MapFrom(src => src.AddressDetail.BuildingNumber))
 				.ForPath(a => a.FlatNumber, map => map.MapFrom(src => src.AddressDetail.FlatNumber))

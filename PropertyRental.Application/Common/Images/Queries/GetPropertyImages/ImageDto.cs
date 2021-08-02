@@ -12,9 +12,7 @@ namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Image, ImageDto>()
-				.ForMember(i => i.Name, map => map.MapFrom(src => src.Name))
-				.ForMember(i => i.SourcePath, map => map.MapFrom(src => src.SourcePath));
+			profile.CreateMap<Image, ImageDto>();
 		}
 	}
 }

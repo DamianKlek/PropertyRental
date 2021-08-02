@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 
@@ -11,7 +12,7 @@ namespace PropertyRental.Application.Common.Tenants.Commands.UpdateTenant
 		public string LastName { get; set; }
 		public string Email { get; set; }
 
-		public void Mapping(MappingProfile profile)
+		public void Mapping(Profile profile)
 		{
 			profile.CreateMap<UpdateTenantCommand, Tenant>()
 				.ForPath(t => t.Name.FirstName, map => map.MapFrom(m => m.FirstName))

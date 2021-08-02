@@ -2,7 +2,7 @@
 
 namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
 {
-	public class ListImageVm
+	public class ImageListVm
 	{
 		public ICollection<ImageDto> Images { get; set; }
 	}

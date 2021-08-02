@@ -3,9 +3,9 @@ using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 using System;
 
-namespace PropertyRental.Application.Common.Contracts.Queries.GetContract
+namespace PropertyRental.Application.Common.Contracts
 {
-	public class ContractVm : IMapFrom<Contract>
+	public class StandardContractVm : IMapFrom<Contract>
 	{
 		public DateTime StartRentDate { get; set; }
 		public DateTime EndRentDate { get; set; }
@@ -13,7 +13,7 @@ namespace PropertyRental.Application.Common.Contracts.Queries.GetContract
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Contract, ContractVm>();
+			profile.CreateMap<Contract, StandardContractVm>();
 		}
 	}
 }

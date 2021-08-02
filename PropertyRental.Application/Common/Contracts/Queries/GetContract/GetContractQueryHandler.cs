@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyRental.Application.Common.Contracts.Queries.GetContract
 {
-	public class GetContractQueryHandler : IRequestHandler<GetContractQuery, ContractVm>
+	public class GetContractQueryHandler : IRequestHandler<GetContractQuery, StandardContractVm>
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace PropertyRental.Application.Common.Contracts.Queries.GetContract
 			_context = context;
 			_mapper = mapper;
 		}
-		public async Task<ContractVm> Handle(GetContractQuery request, CancellationToken cancellationToken)
+		public async Task<StandardContractVm> Handle(GetContractQuery request, CancellationToken cancellationToken)
 		{
 			var contract = await _context.Contracts.Where(c => c.Id == request.ContractId).FirstOrDefaultAsync(cancellationToken);
 
-			var contractVm = _mapper.Map<ContractVm>(contract);
+			var contractVm = _mapper.Map<StandardContractVm>(contract);
 
 			return contractVm;
 		}
