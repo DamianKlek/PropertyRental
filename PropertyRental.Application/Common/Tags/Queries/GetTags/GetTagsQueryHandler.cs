@@ -14,9 +14,9 @@ namespace PropertyRental.Application.Common.Tags.Queries.GetTags
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public GetTagsQueryHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
+		public GetTagsQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbConext;
+			_context = context;
 			_mapper = mapper;
 		}
 

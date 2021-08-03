@@ -12,9 +12,7 @@ namespace PropertyRental.Application.Common.Properties.Commands.CreateProperty
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<CreatePropertyCommand, Property>()
-				.ForMember(p => p.Name, map => map.MapFrom(src => src.Name))
-				.ForMember(p => p.Description, map => map.MapFrom(src => src.Description));
+			profile.CreateMap<CreatePropertyCommand, Property>();
 		}
 	}
 }

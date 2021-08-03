@@ -12,9 +12,9 @@ namespace PropertyRental.Application.Common.Tenants.Queries.GetTenant
 	{
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
-		public GetTenantQueryHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
+		public GetTenantQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_conext = propertyDbConext;
+			_conext = context;
 			_mapper = mapper;
 		}
 

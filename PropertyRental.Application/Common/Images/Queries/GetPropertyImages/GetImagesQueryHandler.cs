@@ -14,9 +14,9 @@ namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
 
-		public GetImagesQueryHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
+		public GetImagesQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_conext = propertyDbConext;
+			_conext = context;
 			_mapper = mapper;
 		}
 		public async Task<ImageListVm> Handle(GetImagesQuery request, CancellationToken cancellationToken)

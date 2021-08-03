@@ -10,8 +10,7 @@ namespace PropertyRental.Application.Common.Tags
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Tag, StandardTagVm>()
-				.ForMember(t => t.Name, map => map.MapFrom(src => src.Name.ToString()));
+			profile.CreateMap<Tag, StandardTagVm>();
 		}
 	}
 }

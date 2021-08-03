@@ -11,8 +11,7 @@ namespace PropertyRental.Application.Common.Tags.Commands.CreateTag
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<CreateTagCommand, Tag>()
-				.ForPath(t => t.Name, map => map.MapFrom(src => src.Name));
+			profile.CreateMap<CreateTagCommand, Tag>();
 		}
 	}
 }

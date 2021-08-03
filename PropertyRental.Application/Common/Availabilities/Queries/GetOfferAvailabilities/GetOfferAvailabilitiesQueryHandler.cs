@@ -14,9 +14,9 @@ namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvail
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
 
-		public GetOfferAvailabilitiesQueryHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
+		public GetOfferAvailabilitiesQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_conext = propertyDbConext;
+			_conext = context;
 			_mapper = mapper;
 		}
 		public async Task<AvailabilityListVm> Handle(GetOfferAvailabilitiesQuery request, CancellationToken cancellationToken)

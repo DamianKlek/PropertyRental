@@ -12,9 +12,9 @@ namespace PropertyRental.Application.Common.Addresses.Commands.CreateAddress
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public CreateAddressCommandHandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public CreateAddressCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbContext;
+			_context = context;
 			_mapper = mapper;
 		}
 

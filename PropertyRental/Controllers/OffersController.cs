@@ -14,7 +14,7 @@ namespace PropertyRental.Controllers
 	public class OffersController : BaseController
 	{
 
-		[HttpGet("/headers")]
+		[HttpGet("headers")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]

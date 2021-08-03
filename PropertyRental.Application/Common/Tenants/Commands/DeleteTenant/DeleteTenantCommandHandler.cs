@@ -11,9 +11,9 @@ namespace PropertyRental.Application.Common.Tenants.Commands.DeleteTenant
 	{
 		private readonly IPropertyDbContext _context;
 
-		public DeleteTenantCommandHandler(IPropertyDbContext propertyDbContext)
+		public DeleteTenantCommandHandler(IPropertyDbContext context)
 		{
-			_context = propertyDbContext;
+			_context = context;
 		}
 
 		public async Task<Unit> Handle(DeleteTenantCommand request, CancellationToken cancellationToken)

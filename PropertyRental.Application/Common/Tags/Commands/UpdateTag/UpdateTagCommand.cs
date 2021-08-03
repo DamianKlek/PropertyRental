@@ -12,8 +12,7 @@ namespace PropertyRental.Application.Common.Tags.Commands.UpdateTag
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<UpdateTagCommand, Tag>()
-				.ForPath(t => t.Name, map => map.MapFrom(src => src.Name));
+			profile.CreateMap<UpdateTagCommand, Tag>();
 		}
 	}
 }

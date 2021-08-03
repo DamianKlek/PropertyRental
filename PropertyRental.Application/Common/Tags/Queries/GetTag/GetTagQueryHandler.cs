@@ -13,10 +13,10 @@ namespace PropertyRental.Application.Common.Tags.Queries.GetTag
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public GetTagQueryHandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public GetTagQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
 			_mapper = mapper;
-			_context = propertyDbContext;
+			_context = context;
 		}
 
 		public async Task<StandardTagVm> Handle(GetTagQuery request, CancellationToken cancellationToken)

@@ -12,9 +12,9 @@ namespace PropertyRental.Application.Common.Tags.Commands.CreateTag
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public CreateTagCommandHandler(IPropertyDbContext propertyDbConetxt, IMapper mapper)
+		public CreateTagCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbConetxt;
+			_context = context;
 			_mapper = mapper;
 		}
 

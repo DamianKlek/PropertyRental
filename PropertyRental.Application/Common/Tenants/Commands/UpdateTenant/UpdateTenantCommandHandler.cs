@@ -12,10 +12,10 @@ namespace PropertyRental.Application.Common.Tenants.Commands.UpdateTenant
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public UpdateTenantCommandHandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public UpdateTenantCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
 			_mapper = mapper;
-			_context = propertyDbContext;
+			_context = context;
 		}
 
 		public async Task<Unit> Handle(UpdateTenantCommand request, CancellationToken cancellationToken)

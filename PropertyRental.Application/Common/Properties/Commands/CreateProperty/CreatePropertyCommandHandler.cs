@@ -11,9 +11,9 @@ namespace PropertyRental.Application.Common.Properties.Commands.CreateProperty
 	{
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
-		public CreatePropertyCommandHandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public CreatePropertyCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbContext;
+			_context = context;
 			_mapper = mapper;
 		}
 

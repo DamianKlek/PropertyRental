@@ -13,9 +13,9 @@ namespace PropertyRental.Application.Common.Addresses.Commands.UpdateAddress
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public UpdateAddressCommandhandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public UpdateAddressCommandhandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbContext;
+			_context = context;
 			_mapper = mapper;
 		}
 

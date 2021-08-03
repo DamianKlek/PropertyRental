@@ -13,9 +13,9 @@ namespace PropertyRental.Application.Common.Addresses.Queries.GetAddress
 		private readonly IPropertyDbContext _context;
 		private readonly IMapper _mapper;
 
-		public GetAddressQueryHandler(IPropertyDbContext propertyDbContext, IMapper mapper)
+		public GetAddressQueryHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_context = propertyDbContext;
+			_context = context;
 			_mapper = mapper;
 		}
 

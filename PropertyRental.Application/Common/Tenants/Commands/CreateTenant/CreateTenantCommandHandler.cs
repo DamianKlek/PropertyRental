@@ -12,9 +12,9 @@ namespace PropertyRental.Application.Common.Tenants.Commands.CreateTenant
 		private readonly IPropertyDbContext _conext;
 		private readonly IMapper _mapper;
 
-		public CreateTenantCommandHandler(IPropertyDbContext propertyDbConext, IMapper mapper)
+		public CreateTenantCommandHandler(IPropertyDbContext context, IMapper mapper)
 		{
-			_conext = propertyDbConext;
+			_conext = context;
 			_mapper = mapper;
 		}
 
