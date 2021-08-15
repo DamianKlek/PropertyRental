@@ -6,6 +6,7 @@ using PropertyRental.Application.Common.Tenants.Commands.CreateTenant;
 using PropertyRental.Application.Common.Tenants.Commands.DeleteTenant;
 using PropertyRental.Application.Common.Tenants.Commands.UpdateTenant;
 using PropertyRental.Application.Common.Tenants.Queries.GetTenant;
+using PropertyRental.Application.Common.Tenants.Queries.GetTenantContracts;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -21,6 +22,17 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<StandardTenantVm>> GetTenantAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetTenantQuery() { TenantId = id });
+			return vm;
+		}
+
+		[HttpGet("{id}/contracts")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+		public async Task<ActionResult<ContractListVm>> GetTenantContractsAsync(int id)
+		{
+			var vm = await Mediator.Send(new GetTenantContractsQuery() { TenantId = id });
 			return vm;
 		}
 

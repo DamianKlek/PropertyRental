@@ -2,7 +2,7 @@
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 
-namespace PropertyRental.Application.Common.Addresses.Queries.GetPropertyAddress
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyAddress
 {
 	public class PropertyAddressVm : IMapFrom<Address>
 	{

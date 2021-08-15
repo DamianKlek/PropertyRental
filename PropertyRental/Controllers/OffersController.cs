@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.Availabilities;
 using PropertyRental.Application.Common.Offers.Commands.CreateOffer;
 using PropertyRental.Application.Common.Offers.Commands.DeleteOffer;
 using PropertyRental.Application.Common.Offers.Commands.UpdateOffer;
+using PropertyRental.Application.Common.Offers.Queries.GetOfferAvailabilities;
 using PropertyRental.Application.Common.Offers.Queries.GetOfferDetail;
 using PropertyRental.Application.Common.Offers.Queries.GetOffersHeader;
 using System.Threading.Tasks;
@@ -31,6 +33,17 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<OfferDetailVm>> GetOfferDetailAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetOfferDetailQuery() { OfferId = id });
+			return vm;
+		}
+
+		[HttpGet("{id}/availabilities")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+		public async Task<ActionResult<AvailabilityListVm>> GetOfferAvailabilitiesAsync(int id)
+		{
+			var vm = await Mediator.Send(new GetOfferAvailabilitiesQuery() { OfferId = id });
 			return vm;
 		}
 

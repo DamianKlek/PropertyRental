@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PropertyRental.Application.Common.Addresses.Queries.GetPropertyAddress
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyAddress
 {
 	public class GetPropertyAddressQueryHandler : IRequestHandler<GetPropertyAddressQuery, PropertyAddressVm>
 	{

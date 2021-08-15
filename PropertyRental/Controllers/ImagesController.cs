@@ -6,7 +6,6 @@ using PropertyRental.Application.Common.Images.Commands.CreateImage;
 using PropertyRental.Application.Common.Images.Commands.DeleteImage;
 using PropertyRental.Application.Common.Images.Commands.UpdateImage;
 using PropertyRental.Application.Common.Images.Queries.GetImage;
-using PropertyRental.Application.Common.Images.Queries.GetImagesForProperty;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -22,17 +21,6 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<StandardImageVm>> GetImageAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetImageQuery() { ImageId = id });
-			return vm;
-		}
-
-		[HttpGet("properties/{propertyId}")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<ImageListVm>> GetImagesAsync(int propertyId)
-		{
-			var vm = await Mediator.Send(new GetImagesQuery() { PropertyId = propertyId });
 			return vm;
 		}
 

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace PropertyRental.Application.Common.Addresses.Queries.GetPropertyAddress
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyAddress
 {
 	public class GetPropertyAddressQuery : IRequest<PropertyAddressVm>
 	{

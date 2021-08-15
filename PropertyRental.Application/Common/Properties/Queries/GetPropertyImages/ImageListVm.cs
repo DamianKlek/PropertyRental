@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyImages
 {
 	public class ImageListVm
 	{

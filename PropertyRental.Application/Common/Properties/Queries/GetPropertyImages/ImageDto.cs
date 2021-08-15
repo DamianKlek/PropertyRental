@@ -2,7 +2,7 @@
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 
-namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyImages
 {
 	public class ImageDto : IMapFrom<Image>
 	{

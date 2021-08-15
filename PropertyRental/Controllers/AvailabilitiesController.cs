@@ -6,7 +6,6 @@ using PropertyRental.Application.Common.Availabilities.Commands.CreateAvailabili
 using PropertyRental.Application.Common.Availabilities.Commands.DeleteAvailability;
 using PropertyRental.Application.Common.Availabilities.Commands.UpdateAvailability;
 using PropertyRental.Application.Common.Availabilities.Queries.GetAvailability;
-using PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -22,17 +21,6 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<StandardAvailabilityVm>> GetAvailabilitysAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetAvailabilityQuery() { AvailabilityId = id });
-			return vm;
-		}
-
-		[HttpGet("offers/{offerId}")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<AvailabilityListVm>> GetOfferAvailabilitiesAsync(int offerId)
-		{
-			var vm = await Mediator.Send(new GetOfferAvailabilitiesQuery() { OfferId = offerId });
 			return vm;
 		}
 

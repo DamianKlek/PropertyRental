@@ -3,7 +3,7 @@ using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
 using System;
 
-namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities
+namespace PropertyRental.Application.Common.Availabilities
 {
 	public class AvailabilityDto : IMapFrom<Availability>
 	{

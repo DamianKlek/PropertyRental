@@ -2,12 +2,13 @@
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using PropertyRental.Application.Common.Availabilities;
 using PropertyRental.Application.Common.Interfaces;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities
+namespace PropertyRental.Application.Common.Offers.Queries.GetOfferAvailabilities
 {
 	public class GetOfferAvailabilitiesQueryHandler : IRequestHandler<GetOfferAvailabilitiesQuery, AvailabilityListVm>
 	{

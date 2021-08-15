@@ -6,7 +6,6 @@ using PropertyRental.Application.Common.Addresses.Commands.CreateAddress;
 using PropertyRental.Application.Common.Addresses.Commands.DeleteAddress;
 using PropertyRental.Application.Common.Addresses.Commands.UpdateAddress;
 using PropertyRental.Application.Common.Addresses.Queries.GetAddress;
-using PropertyRental.Application.Common.Addresses.Queries.GetPropertyAddress;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -22,17 +21,6 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<StandardAddressVm>> GetAddressAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetAddressQuery() { Id = id });
-			return vm;
-		}
-
-		[HttpGet("property/{propertyId}")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<PropertyAddressVm>> GetPropertyAddressAsync(int propertyId)
-		{
-			var vm = await Mediator.Send(new GetPropertyAddressQuery() { PropertyId = propertyId });
 			return vm;
 		}
 

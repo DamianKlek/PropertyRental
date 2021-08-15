@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities
+namespace PropertyRental.Application.Common.Availabilities
 {
 	public class AvailabilityListVm
 	{

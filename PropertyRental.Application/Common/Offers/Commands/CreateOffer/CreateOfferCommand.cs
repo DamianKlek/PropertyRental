@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
-using PropertyRental.Application.Common.Availabilities.Queries.GetOfferAvailabilities;
+using PropertyRental.Application.Common.Availabilities;
 using PropertyRental.Application.Common.Mappings;
 using PropertyRental.Domain.Entities;
-using System.Collections.Generic;
 
 namespace PropertyRental.Application.Common.Offers.Commands.CreateOffer
 {
@@ -11,7 +10,7 @@ namespace PropertyRental.Application.Common.Offers.Commands.CreateOffer
 	{
 		public decimal DayCost { get; set; }
 		public int PropertyId { get; set; }
-		public ICollection<AvailabilityDto> Availabilities { get; set; }
+		public AvailabilityListVm Availabilities { get; set; }
 
 		public void Mapping(Profile profile)
 		{

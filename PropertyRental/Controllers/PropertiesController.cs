@@ -6,6 +6,8 @@ using PropertyRental.Application.Common.Properties.Commands.CreateProperty;
 using PropertyRental.Application.Common.Properties.Commands.DeleteProperty;
 using PropertyRental.Application.Common.Properties.Commands.UpdateProperty;
 using PropertyRental.Application.Common.Properties.Queries.GetProperty;
+using PropertyRental.Application.Common.Properties.Queries.GetPropertyAddress;
+using PropertyRental.Application.Common.Properties.Queries.GetPropertyImages;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -21,6 +23,28 @@ namespace PropertyRental.Controllers
 		public async Task<ActionResult<StandardPropertyVm>> GetPropertyAsync(int id)
 		{
 			var vm = await Mediator.Send(new GetPropertyQuery() { PropertyId = id });
+			return vm;
+		}
+
+		[HttpGet("{id}/address")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+		public async Task<ActionResult<PropertyAddressVm>> GetPropertyAddressAsync(int id)
+		{
+			var vm = await Mediator.Send(new GetPropertyAddressQuery() { PropertyId = id });
+			return vm;
+		}
+
+		[HttpGet("{id}/images")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+		public async Task<ActionResult<ImageListVm>> GetImagesAsync(int id)
+		{
+			var vm = await Mediator.Send(new GetImagesQuery() { PropertyId = id });
 			return vm;
 		}
 

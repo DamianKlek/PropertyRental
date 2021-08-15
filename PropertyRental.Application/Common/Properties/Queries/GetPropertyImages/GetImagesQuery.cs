@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace PropertyRental.Application.Common.Images.Queries.GetImagesForProperty
+namespace PropertyRental.Application.Common.Properties.Queries.GetPropertyImages
 {
 	public class GetImagesQuery : IRequest<ImageListVm>
 	{
