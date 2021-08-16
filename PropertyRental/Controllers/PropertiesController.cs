@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
-using PropertyRental.Application.Common.Properties;
-using PropertyRental.Application.Common.Properties.Commands.CreateProperty;
-using PropertyRental.Application.Common.Properties.Commands.DeleteProperty;
-using PropertyRental.Application.Common.Properties.Commands.UpdateProperty;
-using PropertyRental.Application.Common.Properties.Queries.GetProperty;
-using PropertyRental.Application.Common.Properties.Queries.GetPropertyAddress;
-using PropertyRental.Application.Common.Properties.Queries.GetPropertyImages;
+using PropertyRental.Application.Properties;
+using PropertyRental.Application.Properties.Commands.CreateProperty;
+using PropertyRental.Application.Properties.Commands.DeleteProperty;
+using PropertyRental.Application.Properties.Commands.UpdateProperty;
+using PropertyRental.Application.Properties.Queries.GetProperty;
+using PropertyRental.Application.Properties.Queries.GetPropertyAddress;
+using PropertyRental.Application.Properties.Queries.GetPropertyImages;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers

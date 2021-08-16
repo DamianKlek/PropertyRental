@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
-using PropertyRental.Application.Common.Availabilities;
-using PropertyRental.Application.Common.Offers.Commands.CreateOffer;
-using PropertyRental.Application.Common.Offers.Commands.DeleteOffer;
-using PropertyRental.Application.Common.Offers.Commands.UpdateOffer;
-using PropertyRental.Application.Common.Offers.Queries.GetOfferAvailabilities;
-using PropertyRental.Application.Common.Offers.Queries.GetOfferDetail;
-using PropertyRental.Application.Common.Offers.Queries.GetOffersHeader;
+using PropertyRental.Application.Availabilities;
+using PropertyRental.Application.Offers.Commands.CreateOffer;
+using PropertyRental.Application.Offers.Commands.DeleteOffer;
+using PropertyRental.Application.Offers.Commands.UpdateOffer;
+using PropertyRental.Application.Offers.Queries.GetOfferAvailabilities;
+using PropertyRental.Application.Offers.Queries.GetOfferDetail;
+using PropertyRental.Application.Offers.Queries.GetOffersHeader;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers

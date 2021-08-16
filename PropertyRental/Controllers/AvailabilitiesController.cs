@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
-using PropertyRental.Application.Common.Availabilities;
-using PropertyRental.Application.Common.Availabilities.Commands.CreateAvailability;
-using PropertyRental.Application.Common.Availabilities.Commands.DeleteAvailability;
-using PropertyRental.Application.Common.Availabilities.Commands.UpdateAvailability;
-using PropertyRental.Application.Common.Availabilities.Queries.GetAvailability;
+using PropertyRental.Application.Availabilities;
+using PropertyRental.Application.Availabilities.Commands.CreateAvailability;
+using PropertyRental.Application.Availabilities.Commands.DeleteAvailability;
+using PropertyRental.Application.Availabilities.Commands.UpdateAvailability;
+using PropertyRental.Application.Availabilities.Queries.GetAvailability;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers

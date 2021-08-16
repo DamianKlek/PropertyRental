@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
-using PropertyRental.Application.Common.Addresses;
-using PropertyRental.Application.Common.Addresses.Commands.CreateAddress;
-using PropertyRental.Application.Common.Addresses.Commands.DeleteAddress;
-using PropertyRental.Application.Common.Addresses.Commands.UpdateAddress;
-using PropertyRental.Application.Common.Addresses.Queries.GetAddress;
+using PropertyRental.Application.Addresses;
+using PropertyRental.Application.Addresses.Commands.CreateAddress;
+using PropertyRental.Application.Addresses.Commands.DeleteAddress;
+using PropertyRental.Application.Addresses.Commands.UpdateAddress;
+using PropertyRental.Application.Addresses.Queries.GetAddress;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers

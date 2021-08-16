@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
-using PropertyRental.Application.Common.Tags;
-using PropertyRental.Application.Common.Tags.Commands.CreateTag;
-using PropertyRental.Application.Common.Tags.Commands.DeleteTag;
-using PropertyRental.Application.Common.Tags.Commands.UpdateTag;
-using PropertyRental.Application.Common.Tags.Queries.GetTag;
-using PropertyRental.Application.Common.Tags.Queries.GetTags;
+using PropertyRental.Application.Tags;
+using PropertyRental.Application.Tags.Commands.CreateTag;
+using PropertyRental.Application.Tags.Commands.DeleteTag;
+using PropertyRental.Application.Tags.Commands.UpdateTag;
+using PropertyRental.Application.Tags.Queries.GetTag;
+using PropertyRental.Application.Tags.Queries.GetTags;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
