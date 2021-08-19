@@ -8,22 +8,24 @@
 This Web API provides functionality for renting properties on specific dates.
 
 ## Changes order
-Version 1:
-* Properties are seeded with prepared data
-* Tenant can rent available properties
+* Fully functional API 
+    * Properties added without landlord
+    * Property can be added with address and its images
+    * Property can be associated with existing tags
+    * Renting available properties
+    * Future tenant can access list of availability properties 
+    * Posibility to rent property for given time
+    * Tenant can access list of previous rented places
 
-Version 2:
+Future versions:
 * Properties are added by individual landlords
-
-Version 3:
-* No separation between roles. Every user has availability to be owner or / and tenant with the same account
-* Users can rent properties for themselves and place their apartments on market simultaneously
-
-Version 4:
+    * No separation between roles. Every user has availability to be owner or / and tenant with the same account
 * Create fully functional frontend with Blazor or React
 	
 ## Technologies
 Project is created with:
 * .NET Core Web API
 * Entity Framework
-* Microsoft SQL Server
+
+## Database schema
+![Database schema](DbSchema.png)
