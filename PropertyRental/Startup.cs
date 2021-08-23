@@ -9,6 +9,7 @@ using PropertyRental.Persistance;
 using PropertyRental.Infrastructure;
 using System;
 using System.IO;
+using Serilog;
 
 namespace PropertyRental
 {
@@ -64,7 +65,7 @@ namespace PropertyRental
 			}
 			app.UseHealthChecks("/hc");
 			app.UseHttpsRedirection();
-
+			app.UseSerilogRequestLogging();
 			app.UseRouting();
 
 			app.UseCors(); // Cors should appear between app.UseRouting(); and app.UseAuthorization();
