@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MovieManagement.Api.Models;
+using PropertyRental.Application.Common.POCOs;
 using PropertyRental.Application.Images;
 using PropertyRental.Application.Images.Commands.CreateImage;
+using PropertyRental.Application.Images.Commands.CreateImages;
 using PropertyRental.Application.Images.Commands.DeleteImage;
 using PropertyRental.Application.Images.Commands.UpdateImage;
 using PropertyRental.Application.Images.Queries.GetImage;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PropertyRental.Controllers
@@ -24,18 +28,28 @@ namespace PropertyRental.Controllers
 			return vm;
 		}
 
-		//TODO: Change to actual add image, not only data
 		[HttpPost("add")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
-		public async Task<ActionResult<int>> CreateImageAsync(CreateImageCommand image)
+		public async Task<ActionResult<int>> CreateImageAsync([FromForm] AddImagePOCO imageFile)
 		{
-			var id = await Mediator.Send(image);
+			var imageCommand = new CreateImageCommand() { PropertyImage = imageFile.File, PropertyId = imageFile.PropertyId };
+			var id = await Mediator.Send(imageCommand);
 			return id;
 		}
 
-		//TODO: Should it delete image file?
+		[HttpPost("add/multiple")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status403Forbidden, Type = typeof(ErrorModel))]
+		public async Task<ActionResult<ICollection<int>>> CreateImagesAsync([FromForm] AddImagesPOCO imageFiles)
+		{
+			var imagesCommand = new CreateImagesCommand() { PropertyImages = imageFiles.Files, PropertyId = imageFiles.PropertyId };
+			var ids = await Mediator.Send(imagesCommand);
+			return ids.ToList();
+		}
+
 		[HttpDelete("delete/{id}")]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]

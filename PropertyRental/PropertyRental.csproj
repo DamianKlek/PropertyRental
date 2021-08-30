@@ -26,4 +26,8 @@
     <ProjectReference Include="..\PropertyRental.Persistance\PropertyRental.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Upload\Images\" />
+  </ItemGroup>
+
 </Project>
