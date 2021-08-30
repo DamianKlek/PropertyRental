@@ -28,10 +28,15 @@ namespace PropertyRental.Domain.ValueObjects
 
       return emailObj;
     }
+    public override string ToString()
+    {
+      return $"{UserName}@{DomainName}";
+    }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-      throw new NotImplementedException();
+      yield return UserName;
+      yield return DomainName;
     }
   }
 }
